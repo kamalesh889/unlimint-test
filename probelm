@@ -1,0 +1,26 @@
+/**
+Common description:
+You need to write a program that gets webpages, extracts content length of a page and puts this value into the map.
+When all address processed, program prints all pairs (webpage address, content length).
+
+Specific requirements:
+
+Worker is a function that receives webpage address (ex: "google.com") and gets page content.
+Worker gets only basic html document and do not receive external resources like images, css and so on.
+You need to create two workers (two go routines).
+You need to use channel(s) to send webpage address to the workers.
+
+On success, if it's possible to get webpage, put the length of webpage content into rusults.ContentLength map. Use as a key webpage address, and content length as the value.
+On failure, if it's impossible to get webpage because some errors, put into the results.ContentLength webpage address as a key, and -1 as a value.
+
+When all webpages from webPages slice processed, print each key-value from webPages.
+Example:
+google.com - 4501
+...
+
+
+The program's execution time should be configurable. If execution time is out, the program should gracefully shut all currently running workers.
+
+
+You can modify provided sources as you wish. You can extend the results structure as you need just keep two provided fields in it.
+*/
